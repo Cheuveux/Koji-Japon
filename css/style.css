@@ -15,15 +15,19 @@
   --header-color: #c16e1b;
   --main-color : #964d04;
   --font-color : #fff6ee;
+  --jap-color : #B45419;
 
   --title-font : "Jost", serif;
   --body-font : "Merriweather", serif;
+  --jap-font : "Merriweather", serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  scroll-behavior: smooth;
 }
 
 body {
@@ -64,7 +68,7 @@ header {
    
   }
   
-  .navbar_bigo .nav-container a {
+  .navbar_bigo .nav-container .navLink{
     text-decoration: none;
     color: var(--font-color);
     font-weight: 500;
@@ -75,11 +79,7 @@ header {
   .navbar_bigo .nav-container a:hover{
       font-weight: bolder;
   }
-  .navbar_bigo .nav-container a .active{
-      font-weight: bolder;
-      color: rgb(74, 10, 10);
-  
-  }
+
   
   .nav-container {
     display: block;
@@ -148,30 +148,37 @@ header {
    
   }
   
-  .navbar_bigo .menu-items_bigo :nth-child(2) {
-      margin-left: -50px;
+  
+ .menu-items_bigo li {
+   position: relative;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .navbar_bigo .menu-items_bigo :last-child {
-      margin-left: -40px;
-      padding-left: 20px;
-  }
-  .navbar_bigo .menu-items_bigo li {
-      margin-bottom: 5rem;
-  }
-  .navbar_bigo .menu-items_bigo a {
+
+.menu-items_bigo .japNav {
+  position: absolute;
+  font-size: 3.5rem;
+  color: var(--jap-color);
+  z-index: 0;
+
+}
+ .menu-items_bigo a {
+    position: relative;
+    top: 0;
     font-size: 1.5rem;
     font-weight: 500;
+    z-index: 1;
   }
   
-  
-  
-  
-  
+
   .logo {
     position: absolute;
-   
+    top: 2em;
     right: -2em;
-    font-weight: bolder;
+    font-weight: 750;
 
   }
 
@@ -198,6 +205,10 @@ header {
   }
   
   
+  .navbar_bigo .nav-container .navLink .active {
+    color: maroon;
+    font-weight: 900;
+  }
  
   
 }

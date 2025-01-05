@@ -9,27 +9,11 @@
     });
 
 //ICI POUR AJOUTER UNE CLASSE ACTIVE A LA PAGE ACTIVE ET LUI ATTRIBUER DES PROPRIETES CSS (CHANGEMENT DE COULEUR + GRAS)
-window.onload = function() {
-    // Récupère l'URL actuelle
-    const currentPage = window.location.pathname.split("/").pop();
+let navLinks = document.querySelectorAll('.navLink');
 
-    // Associe chaque page à l'élément du nav
-    const navLinks = {
-        "index.html": "nav-accueil",
-        "actu.html": "nav-actualites",
-        "historique.html": "nav-historique",
-        "liens.html": "nav-liens",
-        "contact.html": "nav-contact"
-    };
-
-    // Applique la classe active au lien correspondant
-    if (navLinks[currentPage]) {
-        const navItem = document.getElementById(navLinks[currentPage]);
-        if (navItem) {
-            navItem.classList.add('active');
-        }
-    }
-};
-
- 
-
+navLinks.forEach(navLink => {
+    navLinks.addEventListener('click', () => {
+        navLinks.forEach(link => link.classList.remove('active'));
+        navLink.classList.add('active');
+    });
+});

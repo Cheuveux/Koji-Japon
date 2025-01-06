@@ -57,6 +57,8 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 62px;
+
+    z-index: 3;
   }
   
   .navbar_bigo .menu-items_bigo {
